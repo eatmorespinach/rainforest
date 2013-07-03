@@ -1,5 +1,10 @@
-<h1>Products#index</h1>
+<h1>Products Index Home!</h1>
 <p>Find me in app/views/products/index.html.erb</p>
 
 
-<%= @products%>
+<% @products.each do |product| %>
+	<h4><%= product.name %></h4>
+	<p><%= product.formatted_price %></p>
+<% end %>
+
+
