@@ -1,4 +1,6 @@
 class Product < ActiveRecord::Base
+	has_many :reviews
+	
   attr_accessible :description, :name, :price_in_cents
 
   validates :description, :name, :presence => true
