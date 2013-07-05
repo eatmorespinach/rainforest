@@ -1,10 +1,21 @@
 Rainforest::Application.routes.draw do
   
+  get "reviews/show"
+
+  get "reviews/new"
+
+  get "reviews/edit"
 
   resources :users, :only => [:new, :create]
-  resources :products
-
+  resources :products do
+    resources :reviews, :except => [:index]
+  end
+  
   resources :sessions, :only => [:new, :create, :destroy]
+
+  
+
+
   #how come I can't visit sessions/destroy???
 
   # The priority is based upon order of creation:
