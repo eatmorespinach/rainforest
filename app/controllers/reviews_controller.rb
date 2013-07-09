@@ -6,6 +6,7 @@ class ReviewsController < ApplicationController
   end
 
   def create
+    load_product
   	@review = Review.new(
     	:comment    => params[:review][:comment], 
     	:product_id => @product.id, 
@@ -29,6 +30,7 @@ class ReviewsController < ApplicationController
   private
 
   def load_product
-  	@product = Product.find(:product_id)
+  	@product = Product.find(params[:product_id])
+    #does paramas[:product_id] = 4, or whatever # the product is. This action is executed upon "CREATE" method
   end
 end
