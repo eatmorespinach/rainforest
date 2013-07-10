@@ -1,6 +1,9 @@
 class ReviewsController < ApplicationController
 	before_filter :ensure_logged_in, :only => [:edit, :create, :show, :update, :destroy]
   
+#U don't need edit or update as methods in my before filter 
+#bc they aren't methods, right 
+
   def show  
   	@review = Review.find(params[:id])
   end

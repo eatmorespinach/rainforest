@@ -1,15 +1,12 @@
 <h1>Showing you this specific product!</h1>
 
-
-  
 	<h2><%= @product.name %></h2>
 	<p><%= @product.formatted_price %></p>
 
 
   <% if current_user %>
-
+    
     <h3>Reviews</h3>
-
     <p>Reviews for <%= @product.name %></p>
 
     <% @product.reviews.each do |review| %>
@@ -22,9 +19,6 @@
         <% end %>
       </p>
     <% end %>
-
-
-
 
 
   <h4>New Review</h4>
